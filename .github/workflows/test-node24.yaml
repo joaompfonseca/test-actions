@@ -3,6 +3,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
       - name: Verify Node.js Version
         run: |
             which node
@@ -10,6 +16,4 @@ jobs:
             ls -la /__e/
             ls -la /__e/node24
             ls -la /__e/node24/bin
-      - name: Checkout Repository
-        uses: actions/checkout@v5
       
