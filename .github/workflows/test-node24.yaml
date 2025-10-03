@@ -2,7 +2,6 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ghcr.io/enterprise-runners/node:24
     steps:
       - name: Verify Node.js Version
         run: |
