@@ -1,14 +1,16 @@
 on: push
 jobs:
   build:
-    runs-on: ghcr.io/enterprise-runners/runner:latest
+    runs-on: ubuntu-latest
     container: ghcr.io/enterprise-runners/node:24
     steps:
-      - run: |
+      - name: Verify Node.js Version
+        run: |
             which node
             node -v
             ls -la /__e/
             ls -la /__e/node24
             ls -la /__e/node24/bin
-      - uses: actions/checkout@v5
+      - name: Checkout Repository
+        uses: actions/checkout@v5
       
