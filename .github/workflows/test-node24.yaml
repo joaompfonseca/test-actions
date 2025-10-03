@@ -1,0 +1,14 @@
+on: push
+jobs:
+  build:
+    runs-on: ghcr.io/enterprise-runners/runner:latest
+    container: ghcr.io/enterprise-runners/node:24
+    steps:
+      - run: |
+            which node
+            node -v
+            ls -la /__e/
+            ls -la /__e/node24
+            ls -la /__e/node24/bin
+      - uses: actions/checkout@v5
+      
